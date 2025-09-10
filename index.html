@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Sebastian | Desarrollador Web FrontEnd</title>
+    <link rel="stylesheet" href="/Css/styles.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!--  Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fw-bold fs-4" href="#">
+                    <img src="Img/Logo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-top">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#info">Sobre Mi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#form">Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="about" class="text-center">
+        <div class="container">
+            <h1>Hola, soy Juan Sebastian</h1>
+            <p class="lead">Desarrollador Web Front-End | Analista de datos | Cientifico de datos</p>
+            <a href="#projects" class="btn btn-light fw-semibold shadow">Ver mis proyectos</a>
+            <a href="#form" class="btn btn-light fw-semibold shadow">Contactame</a>
+        </div>
+    </section>
+
+    <!-- Info -->
+    <section id="info" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Sobre Mí</h2>
+            <p class="text-center fs-5 text-muted mb-5">
+                Soy estudiante de Ingeniería de Sistemas (4.° semestre) y un apasionado por la tecnología.
+                He complementado mi formación con bootcamps en desarrollo web, análisis y ciencia de datos,
+                lo que me ha dado una base sólida en Front-End y análisis de datos.
+            </p>
+
+            <!-- Habilidades -->
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+
+                    <!-- HTML -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">HTML <span class="float-end">90%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 90%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- CSS -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">CSS <span class="float-end">85%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 85%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">JavaScript <span class="float-end">30%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 30%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Python -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">Python (Análisis de datos) <span class="float-end">75%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 75%;"></div>
+                        </div>
+                    </div>
+                    <!-- Java -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">Java <span class="float-end">20%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 20%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="mb-4">
+                        <h6 class="fw-semibold">SQL <span class="float-end">60%</span></h6>
+                        <div class="progress" style="height: 12px;">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 60%;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Proyectos -->
+    <section id="projects" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Proyectos</h2>
+            <div class="row justify-content-center">
+                <!-- Primera Card -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg h-100">
+                        <img src="/Img/Novatech.png" class="card-img-top" alt="Proyecto Novatech">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Novatech</h5>
+                            <p class="card-text text-muted">
+                                NovaTech es una tienda online enfocada en la venta de productos tecnológicos,
+                                desarrollada con HTML, CSS y JavaScript. El proyecto integra un diseño moderno,
+                                interfaz intuitiva y se adapta a distintos dispositivos.
+                            </p>
+                            <a href="https://nova-tech-pi.vercel.app" class="btn btn-primary"
+                                target="_blank">VerProyecto</a>
+                            <a href="https://github.com/S3b4sst14n/NovaTech" class="btn btn-primary"
+                                target="_blank">Codigo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda Card -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card shadow-lg h-100">
+                        <img src="/Img/Blog.png" class="card-img-top" alt="Proyecto Blog">
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Blog My Hero Academia</h5>
+                            <p class="card-text text-muted">
+                                Este es un blog dedicado a la serie My Hero Academia, donde se analizan episodios,
+                                personajes y se comparten teorías. Desarrollado con HTML, CSS, Bootstrap, el blog
+                                cuenta con un diseño atractivo y fácil navegación.
+                            </p>
+                            <a href="https://myheroacademyproyect.vercel.app" class="btn btn-primary"
+                                target="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/S3b4sst14n/Mi-primera-pagina2" class="btn btn-primary"
+                                target="_blank">Codigo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="form" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold">Contacto</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form action="submit_form.php" method="POST" class="p-4 shadow-lg bg-white">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nombre:</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correo Electrónico:</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Mensaje:</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-dark w-100">Enviar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2025 Juan Sebastian | Todos los derechos reservados</p>
+            <div class="social-icons mt-2">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
