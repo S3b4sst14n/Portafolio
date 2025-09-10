@@ -39,4 +39,4 @@ async function enviarFormulario(event) {
     }
 }
 
-document.getElementById('form').addEventListener('submit', enviarFormulario);
+document.getElementById('contactForm').addEventListener('submit', enviarFormulario);
