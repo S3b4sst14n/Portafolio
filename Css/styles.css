@@ -1,72 +1,71 @@
 body {
-    font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 section {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 50px 20px;
-    }
-
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 20px;
+}
 
 /* Hero */
 #about {
-    background: linear-gradient(135deg, #0d6efd, #6610f2);
-    color: white;
-    padding: 100px 20px;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  color: white;
+  padding: 100px 20px;
 }
 
 #about h1 {
-    font-size: 3rem;
-    font-weight: 700;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 #about .btn {
-    margin-top: 20px;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    border-radius: 30px;
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
 }
 
 /* Proyectos */
 .card {
-    border: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
-    border-radius: 10px 10px 0 0;
+  border-radius: 10px 10px 0 0;
 }
 
 /* Formulario */
 form {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 /* Footer */
 footer {
-    background: #111;
+  background: #111;
 }
 
 footer p {
-    margin: 0;
+  margin: 0;
 }
 
 footer .social-icons a {
-    color: white;
-    margin: 0 10px;
-    font-size: 1.3rem;
-    transition: color 0.3s ease;
+  color: white;
+  margin: 0 10px;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
 }
 
 footer .social-icons a:hover {
-    color: #0d6efd;
+  color: #0d6efd;
 }
