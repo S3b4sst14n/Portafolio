@@ -1,9 +1,9 @@
 async function enviarFormulario(event) {
     event.preventDefault();
 
-    const nombre = document.getElementById('nombre').value;
+    const nombre = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const mensaje = document.getElementById('mensaje').value;
+    const mensaje = document.getElementById('message').value;
 
     // Servisios EmailJS
     const serviceID = 'service_qtnb1aq';
@@ -39,4 +39,4 @@ async function enviarFormulario(event) {
         alert('Error de conexión.');
     }
 }
-document.getElementById('miFormulario').addEventListener('submit', enviarFormulario);
+document.getElementById('form').addEventListener('submit', enviarFormulario);
