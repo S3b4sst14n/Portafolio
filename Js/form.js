@@ -5,15 +5,14 @@ async function enviarFormulario(event) {
     const email = document.getElementById('email').value;
     const mensaje = document.getElementById('message').value;
 
-    // Servisios EmailJS
     const serviceID = 'service_qtnb1aq';
     const templateID = 'template_uyksvpl';
-    const userID = 'D4ILizNNnYQCGVQpK';
+    const publicKey = 'D4ILizNNnYQCGVQpK'; 
 
     const data = {
         service_id: serviceID,
         template_id: templateID,
-        user_id: userID,
+        user_id: publicKey, 
         template_params: {
             nombre,
             email,
@@ -39,4 +38,5 @@ async function enviarFormulario(event) {
         alert('Error de conexión.');
     }
 }
+
 document.getElementById('form').addEventListener('submit', enviarFormulario);
