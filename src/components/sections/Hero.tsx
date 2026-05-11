@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Rocket, ChevronDown, Sparkles } from "lucide-react";
+import { Rocket, ChevronDown } from "lucide-react";
 import { SiReact, SiPython, SiAstro, SiTypescript, SiGithub } from "react-icons/si";
 import { FaLinkedinIn as SiLinkedin } from "react-icons/fa6";
 import { useTypewriter } from "../../hooks/useTypewriter";
@@ -35,27 +35,7 @@ export default function Hero() {
       id="hero"
       className="relative flex min-h-screen items-center justify-center overflow-hidden px-5 pb-16 pt-32"
     >
-      {/* Animated blobs */}
-      <motion.div
-        animate={{ y: [0, -28, 0], scale: [1, 1.05, 1] }}
-        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
-        className="pointer-events-none absolute -left-32 -top-40 h-[520px] w-[520px] rounded-full opacity-30 blur-[110px]"
-        style={{ background: "#7c3aed" }}
-      />
-      <motion.div
-        animate={{ y: [0, 24, 0], scale: [1, 0.95, 1] }}
-        transition={{ duration: 11, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="pointer-events-none absolute -bottom-28 -right-24 h-[420px] w-[420px] rounded-full opacity-25 blur-[110px]"
-        style={{ background: "#06b6d4" }}
-      />
-      <motion.div
-        animate={{ y: [0, -20, 0], x: [0, 14, 0] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-        className="pointer-events-none absolute left-[55%] top-[40%] h-[280px] w-[280px] rounded-full opacity-15 blur-[100px]"
-        style={{ background: "#f472b6" }}
-      />
-
-      {/* Dot grid */}
+      {/* Soft dot grid masked on top of global aurora background */}
       <div className="dot-bg mask-radial pointer-events-none absolute inset-0" />
 
       <div className="relative z-10 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-16">
@@ -80,13 +60,6 @@ export default function Hero() {
             <span className="text-slate-200">Hola, soy</span>
             <br />
             <span className="gradient-text-tri">Juan Sebastian</span>
-            <motion.span
-              animate={{ rotate: [0, 14, -8, 14, 0] }}
-              transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 3 }}
-              className="ml-3 inline-block origin-[70%_70%]"
-            >
-              <Sparkles className="inline h-7 w-7 text-brand-cyan" />
-            </motion.span>
           </motion.h1>
 
           <motion.p
@@ -158,14 +131,14 @@ export default function Hero() {
         >
           {/* Conic spinning ring background */}
           <div
-            className="absolute h-[320px] w-[320px] animate-spin-slow rounded-full opacity-30 blur-2xl"
+            className="absolute h-[420px] w-[420px] animate-spin-slow rounded-full opacity-35 blur-2xl"
             style={{
               background:
                 "conic-gradient(from 0deg, #7c3aed, #06b6d4, #f472b6, #7c3aed)",
             }}
           />
 
-          <div className="relative z-10 w-[280px] rounded-3xl border border-white/[0.09] bg-white/[0.04] p-9 text-center shadow-[0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.08)] backdrop-blur-2xl">
+          <div className="relative z-10 w-[360px] rounded-3xl border border-white/[0.09] bg-white/[0.04] p-11 text-center shadow-[0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.08)] backdrop-blur-2xl">
             {/* Inner glow */}
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl"
@@ -175,8 +148,9 @@ export default function Hero() {
               }}
             />
 
-            {/* Avatar */}
-            <div className="relative mx-auto mb-5 h-24 w-24">
+            {/* Avatar with personal photo */}
+            <div className="group/avatar relative mx-auto mb-6 h-40 w-40">
+              {/* Spinning conic ring */}
               <div
                 className="absolute inset-0 animate-spin-slow rounded-full p-[2px]"
                 style={{
@@ -186,38 +160,65 @@ export default function Hero() {
               >
                 <div className="h-full w-full rounded-full bg-bg" />
               </div>
+
+              {/* Photo */}
               <div
-                className="absolute inset-[3px] flex items-center justify-center rounded-full font-display text-3xl font-bold text-white"
-                style={{
-                  background: "linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)",
-                  boxShadow: "0 0 40px rgba(124,58,237,.6)",
-                }}
+                className="absolute inset-[3px] overflow-hidden rounded-full"
+                style={{ boxShadow: "0 0 36px rgba(124,58,237,.55)" }}
               >
-                JS
+                <img
+                  src="/img/juan.jpeg"
+                  alt="Juan Sebastian"
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover/avatar:scale-110"
+                  style={{ objectPosition: "50% 22%" }}
+                  onError={(e) => {
+                    // Fallback to gradient "JS" if photo missing
+                    const img = e.currentTarget;
+                    img.style.display = "none";
+                    const fallback = img.nextElementSibling as HTMLElement | null;
+                    if (fallback) fallback.style.display = "flex";
+                  }}
+                />
+                <div
+                  className="absolute inset-0 hidden items-center justify-center font-display text-5xl font-bold text-white"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%)",
+                  }}
+                >
+                  JS
+                </div>
+
+                {/* Subtle gradient tint overlay */}
+                <div
+                  className="pointer-events-none absolute inset-0 mix-blend-overlay opacity-40 transition-opacity duration-500 group-hover/avatar:opacity-0"
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(124,58,237,.4) 0%, transparent 50%, rgba(6,182,212,.4) 100%)",
+                  }}
+                />
               </div>
             </div>
 
-            <p className="font-display text-base font-bold">Juan Sebastian</p>
-            <p className="mt-1 text-xs text-slate-400">
+            <p className="font-display text-xl font-bold">Juan Sebastian</p>
+            <p className="mt-1.5 text-sm text-slate-400">
               Frontend &amp; Data Developer
             </p>
 
-            <div className="my-5 h-px bg-white/[0.08]" />
+            <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
 
             <div className="flex items-center justify-between gap-2">
               {[
                 { v: "4+", l: "Proyectos" },
                 { v: "14+", l: "Tech" },
                 { v: "1+", l: "Año exp." },
-              ].map((s, i, arr) => (
+              ].map((s) => (
                 <div key={s.l} className="flex flex-1 flex-col items-center">
-                  <span className="gradient-text font-display text-lg font-bold">
+                  <span className="gradient-text font-display text-2xl font-bold">
                     {s.v}
                   </span>
-                  <span className="text-[0.65rem] text-slate-400">{s.l}</span>
-                  {i < arr.length - 1 && (
-                    <div className="absolute top-0 h-0 w-0" />
-                  )}
+                  <span className="mt-1 text-[0.7rem] text-slate-400">{s.l}</span>
                 </div>
               ))}
             </div>
