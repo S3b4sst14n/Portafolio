@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=
+    <    <title>Juan Sebastian — Frontend & Data Developer</title>
+    <meta name="description" content="Portafolio de Juan Sebastian, desarrollador frontend y analista de datos. Especializado en React, Astro, Python y SQL.">
+    <link rel="stylesheet" href="Css/styles.css">
+    <link rel="icon" href="Img/Logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Custom cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-glow"></div>
+
+    <!-- Scroll progress bar -->
+    <div id="scroll-bar"></div>
+
+    <!-- Back to top -->
+    <a href="#hero" class="back-to-top" id="backToTop" aria-label="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Navbar
+    <header>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="#hero">
+                    <img src="Img/Logo.png" alt="JS" width="44" height="44">
+                </a>
+                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto gap-1">
+                        <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    </ul>
+                    <a href="#" class="btn-nav-cv ms-lg-3 mt-3 mt-lg-0" download>
+                        <i class="fas fa-file-arrow-down"></i> CV
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+     -->
+    <!-- ═══════════════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="hero">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Content -->
+                <div class="hero-content">
+                    <div class="hero-badge reveal">
+                        <span class="badge-dot"></span>
+                        Disponible para trabajar
+                    </div>
+                    <h1 class="hero-title reveal reveal-delay-1">
+                        Hola, soy<br>
+                        <span class="gradient-text">Juan Sebastian</span>
+                    </h1>
+                    <p class="hero-subtitle reveal reveal-delay-2">
+                        <span id="typewriter" class="typewriter"></span>
+                    </p>
+                    <p class="hero-desc reveal reveal-delay-2">
+                        Estudiante de Ingeniería de Sistemas apasionado por construir
+                        experiencias web modernas y transformar datos en decisiones.
+                    </p>
+                    <div class="hero-ctas reveal reveal-delay-3">
+                        <a href="#projects" class="btn-glow">
+                            <i class="fas fa-rocket"></i> Ver proyectos
+                        </a>
+                        <a href="#contact" class="btn-outline-glass">Contactarme</a>
+                    </div>
+                    <div class="hero-socials reveal reveal-delay-3">
+                        <a href="https://github.com/S3b4sst14n" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" aria-label="Twitter / X">
+                            <i class="fab fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Visual card -->
+                <div class="hero-visual reveal reveal-delay-2" aria-hidden="true">
+                    <div class="visual-card">
+                        <div class="avatar-wrap">
+                            <div class="avatar">JS</div>
+                            <div class="avatar-ring"></div>
+                        </div>
+                        <p class="visual-name">Juan Sebastian</p>
+                        <p class="visual-role">Frontend &amp; Data Developer</p>
+                        <div class="visual-divider"></div>
+                        <div class="visual-stats">
+                            <div class="vs-item"><span>3+</span>Proyectos</div>
+                            <div class="vs-sep"></div>
+                            <div class="vs-item"><span>12+</span>Tecnologías</div>
+                            <div class="vs-sep"></div>
+                            <div class="vs-item"><span>1+</span>Año exp.</div>
+                        </div>
+                    </div>
+                    <div class="float-badge fb-1">
+                        <i class="fab fa-react" style="color:#61dafb"></i> React
+                    </div>
+                    <div class="float-badge fb-2">
+                        <i class="fab fa-python" style="color:#3776ab"></i> Python
+                    </div>
+                    <div class="float-badge fb-3">
+                        <i class="fas fa-rocket" style="color:#ff5d01"></i> Astro
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll hint -->
+            <div class="scroll-hint reveal">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         STATS
+    ═══════════════════════════════════════════════════════════════ -->
+    <div id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number" data-target="3">0</div>
+                    <div class="stat-label">Proyectos</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-1">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Semestre universitario</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-2">
+                    <div class="stat-number" data-target="12">0</div>
+                    <div class="stat-label">Tecnologías</div>
+                </div>
+                <div class="stat-item reveal reveal-delay-3">
+                    <div class="stat-number" data-target="1">0</div>
+                    <div class="stat-label">Año de experiencia</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SOBRE MÍ / SKILLS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+
+                <!-- Bio -->
+                <div class="about-bio reveal">
+                    <span class="section-label">Perfil</span>
+                    <h2 class="section-title">Sobre <span>mí</span></h2>
+                    <p class="about-text">
+                        Estudiante de Ingeniería de Sistemas (5.° semestre) apasionado por la tecnología.
+                        He complementado mi formación con bootcamps en desarrollo web, análisis y ciencia
+                        de datos, construyendo una base sólida en Frontend moderno y análisis de datos.
+                    </p>
+                    <p class="about-text">
+                        Me motiva resolver problemas reales con código limpio, interfaces bien diseñadas
+                        y datos bien interpretados. Aprendo rápido, colaboro bien y siempre busco mejorar.
+                    </p>
+                    <div class="about-facts">
+                        <div class="fact-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Ing. Sistemas — 5.° Semestre</span>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Colombia</span>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-language"></i>
+                            <span>Español nativo · Inglés B2</span>
+                        </div>
+                        <div class="fact-item">
+                            <i class="fas fa-briefcase"></i>
+                            <span>Freelance &amp; Open to work</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-glow mt-4 d-inline-flex" download>
+                        <i class="fas fa-file-arrow-down"></i> Descargar CV
+                    </a>
+                </div>
+
+                <!-- Skills -->
+                <div class="about-skills reveal reveal-delay-1">
+                    <div class="skill-category">
+                        <h4 class="cat-label">
+                            <i class="fas fa-code"></i> Frontend
+                        </h4>
+                        <div class="chip-grid">
+                            <div class="chip"><i class="fab fa-html5" style="color:#e34f26"></i> HTML5</div>
+                            <div class="chip"><i class="fab fa-css3-alt" style="color:#1572b6"></i> CSS / SCSS</div>
+                            <div class="chip"><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</div>
+                            <div class="chip"><i class="fab fa-react" style="color:#61dafb"></i> React</div>
+                            <div class="chip"><i class="fas fa-rocket" style="color:#ff5d01"></i> Astro</div>
+                            <div class="chip" style="color:#06b6d4"><svg width="12" height="12" viewBox="0 0 48 48" fill="currentColor" style="display:inline;margin-right:4px"><path d="M24 0L48 12V36L24 48L0 36V12L24 0Z"/></svg> Tailwind</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="cat-label">
+                            <i class="fas fa-database"></i> Data &amp; Backend
+                        </h4>
+                        <div class="chip-grid">
+                            <div class="chip"><i class="fab fa-python" style="color:#3776ab"></i> Python</div>
+                            <div class="chip"><i class="fas fa-database" style="color:#00758f"></i> SQL</div>
+                            <div class="chip"><i class="fas fa-database" style="color:#f29111"></i> MySQL</div>
+                            <div class="chip"><i class="fas fa-elephant" style="color:#336791"></i> PostgreSQL</div>
+                            <div class="chip"><i class="fab fa-java" style="color:#e76f00"></i> Java</div>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4 class="cat-label">
+                            <i class="fas fa-wrench"></i> Herramientas
+                        </h4>
+                        <div class="chip-grid">
+                            <div class="chip"><i class="fab fa-git-alt" style="color:#f05032"></i> Git</div>
+                            <div class="chip"><i class="fab fa-github"></i> GitHub</div>
+                            <div class="chip"><i class="fab fa-bootstrap" style="color:#7952b3"></i> Bootstrap</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         SERVICIOS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="services">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">¿Qué hago?</span>
+                <h2 class="section-title">Mis <span>servicios</span></h2>
+                <p class="section-lead">
+                    Áreas en las que puedo aportar valor a tu proyecto o equipo.
+                </p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card reveal reveal-delay-1">
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Desarrollo Web</h3>
+                    <p>Sitios y apps web modernas, rápidas y responsive con foco en performance y UX premium.</p>
+                    <ul class="service-list">
+                        <li>Landing Pages</li>
+                        <li>Web Apps con React</li>
+                        <li>Portafolios &amp; Blogs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal reveal-delay-2">
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Análisis de Datos</h3>
+                    <p>Transformo datos en insights accionables usando Python, SQL y visualizaciones claras.</p>
+                    <ul class="service-list">
+                        <li>Dashboards interactivos</li>
+                        <li>ETL &amp; Pipelines</li>
+                        <li>Reportes y KPIs</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal reveal-delay-3">
+                    <div class="service-icon-wrap">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Ciencia de Datos</h3>
+                    <p>Modelos predictivos y Machine Learning aplicados a problemas reales de negocio.</p>
+                    <ul class="service-list">
+                        <li>Machine Learning</li>
+                        <li>Análisis exploratorio</li>
+                        <li>Modelos predictivos</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         PROYECTOS
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="projects">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">Portafolio</span>
+                <h2 class="section-title">Mis <span>proyectos</span></h2>
+                <p class="section-lead">
+                    Proyectos que reflejan mi enfoque técnico y atención al detalle.
+                </p>
+            </div>
+
+            <!-- Featured project -->
+            <div class="project-featured reveal reveal-delay-1">
+                <div class="project-featured-img">
+                    <img src="Img/TalentoParaTi.png" alt="Talento Para Ti — sitio web corporativo de IA">
+                    <div class="project-overlay"></div>
+                    <span class="project-work-badge">Trabajo profesional</span>
+                </div>
+                <div class="project-featured-body">
+                    <span class="featured-label">
+                        <i class="fas fa-star"></i> Proyecto destacado
+                    </span>
+                    <h3>Talento Para Ti</h3>
+                    <p>
+                        Rediseño completo del sitio web de una boutique de enablement y delivery de soluciones
+                        de IA para entornos corporativos. Partners oficiales de Microsoft, Databricks y ElevenLabs.
+                        Proyecto en producción con tráfico real.
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Astro</span>
+                        <span class="tag">React</span>
+                        <span class="tag">SCSS</span>
+                        <span class="tag">Tailwind</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.talentoparati.com/en" class="btn-card-primary" target="_blank" rel="noopener">
+                            <i class="fas fa-arrow-up-right-from-square"></i> Ver sitio
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects grid -->
+            <div class="projects-grid">
+
+                <!-- Novatech -->
+                <div class="project-card reveal reveal-delay-1">
+                    <div class="project-img-wrap">
+                        <img src="Img/Novatech.png" alt="Novatech — tienda online">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Novatech</h3>
+                        <p class="project-desc">
+                            Tienda online de productos tecnológicos con diseño moderno, interfaz intuitiva
+                            y totalmente responsive, construida desde cero.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://nova-tech-pi.vercel.app" class="btn-card-primary" target="_blank" rel="noopener">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Ver sitio
+                            </a>
+                            <a href="https://github.com/S3b4sst14n/NovaTech" class="btn-card-ghost" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog MHA -->
+                <div class="project-card reveal reveal-delay-2">
+                    <div class="project-img-wrap">
+                        <img src="Img/Blog.png" alt="Blog My Hero Academia">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Blog My Hero Academia</h3>
+                        <p class="project-desc">
+                            Blog con análisis de episodios, personajes y teorías de la serie.
+                            Diseño atractivo con navegación fluida construido con Bootstrap.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://myheroacademyproyect.vercel.app" class="btn-card-primary" target="_blank" rel="noopener">
+                                <i class="fas fa-arrow-up-right-from-square"></i> Ver sitio
+                            </a>
+                            <a href="https://github.com/S3b4sst14n/Mi-primera-pagina2" class="btn-card-ghost" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accidentes Lab -->
+                <div class="project-card reveal reveal-delay-3">
+                    <div class="project-img-wrap">
+                        <img src="Img/Accidentes-lab.png" alt="Análisis de accidentes de tráfico">
+                        <div class="project-overlay"></div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Accidentes Lab</h3>
+                        <p class="project-desc">
+                            Análisis exploratorio de datos de accidentes de tráfico con Python.
+                            Visualizaciones interactivas y hallazgos clave sobre patrones y factores de riesgo.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Matplotlib</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/S3b4sst14n" class="btn-card-ghost" target="_blank" rel="noopener">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         CONTACTO
+    ═══════════════════════════════════════════════════════════════ -->
+    <section id="contact">
+        <div class="container">
+            <div class="text-center reveal">
+                <span class="section-label">¿Hablamos?</span>
+                <h2 class="section-title">Contac<span>tame</span></h2>
+                <p class="section-lead">
+                    ¿Tienes un proyecto en mente o quieres trabajar juntos? Escríbeme.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+
+                <!-- Info panel -->
+                <div class="contact-info reveal reveal-delay-1">
+                    <p class="contact-intro">
+                        Estoy disponible para proyectos freelance, colaboraciones y oportunidades laborales.
+                        No dudes en contactarme por cualquier canal.
+                    </p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <p class="ci-label">Email</p>
+                                <a href="mailto:sanjuanelojuan06@gmail.com">sanjuanelojuan06@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="ci-icon"><i class="fab fa-github"></i></div>
+                            <div>
+                                <p class="ci-label">GitHub</p>
+                                <a href="https://github.com/S3b4sst14n" target="_blank" rel="noopener">S3b4sst14n</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="ci-icon"><i class="fab fa-linkedin-in"></i></div>
+                            <div>
+                                <p class="ci-label">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/juan-17a528293/" target="_blank" rel="noopener">Juan Sebastian</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="availability-badge">
+                        <span class="badge-dot"></span>
+                        Disponible para proyectos
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="contact-form-wrap reveal reveal-delay-2">
+                    <form id="contactForm">
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Nombre</label>
+                            <input type="text" id="name" name="name" class="form-control"
+                                placeholder="Tu nombre" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                placeholder="tucorreo@ejemplo.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" name="message" class="form-control" rows="5"
+                                placeholder="Cuéntame sobre tu proyecto..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Enviar mensaje
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="footer-inner">
+                <a class="footer-logo" href="#hero">
+                    <img src="Img/Logo.png" alt="JS" width="34" height="34">
+                    <span>Juan Sebastian</span>
+                </a>
+                <p class="footer-copy">&copy; 2025 Juan Sebastian — Todos los derechos reservados.</p>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/juan-17a528293/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/S3b4sst14n" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" rel="noopener" aria-label="Gmail">
+                        <i class="fab fa-gmail"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Js/form.js"></script>
+    <script>
+    // ── Custom cursor ────────────────────────────────────────────────────────────
+    const dot  = document.getElementById('cursor-dot');
+    const glow = document.getElementById('cursor-glow');
+    let mx = 0, my = 0, gx = 0, gy = 0;
+
+    document.addEventListener('mousemove', e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + 'px';
+        dot.style.top  = my + 'px';
+    });
+
+    (function animateGlow() {
+        gx += (mx - gx) * 0.08;
+        gy += (my - gy) * 0.08;
+        glow.style.left = gx + 'px';
+        glow.style.top  = gy + 'px';
+        requestAnimationFrame(animateGlow);
+    })();
+
+    // ── Scroll progress bar ──────────────────────────────────────────────────────
+    const bar = document.getElementById('scroll-bar');
+    window.addEventListener('scroll', () => {
+        const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+        bar.style.width = pct + '%';
+    }, { passive: true });
+
+    // ── Back to top button ───────────────────────────────────────────────────────
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        btt.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+
+    // ── Active nav link on scroll ────────────────────────────────────────────────
+    const sections = document.querySelectorAll('section[id], div[id="stats"]');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    const navObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+                if (active) active.classList.add('active');
+            }
+        });
+    }, { threshold: 0.4 });
+
+    sections.forEach(s => navObs.observe(s));
+
+    // ── Scroll reveal ────────────────────────────────────────────────────────────
+    const revealObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (e.isIntersecting) e.target.classList.add('visible');
+        });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // ── Count-up stats ───────────────────────────────────────────────────────────
+    const countObs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+            if (!e.isIntersecting) return;
+            const el = e.target;
+            const target = +el.dataset.target;
+            const dur = 1400, step = 16;
+            const inc = target / (dur / step);
+            let cur = 0;
+            const timer = setInterval(() => {
+                cur += inc;
+                if (cur >= target) { el.textContent = target + '+'; clearInterval(timer); }
+                else el.textContent = Math.floor(cur);
+            }, step);
+            countObs.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stat-number').forEach(el => countObs.observe(el));
+
+    // ── Typewriter ───────────────────────────────────────────────────────────────
+    const roles = ['Desarrollador Front-End', 'Analista de Datos', 'Científico de Datos'];
+    const tw = document.getElementById('typewriter');
+    let ri = 0, ci = 0, deleting = false;
+
+    function type() {
+        const word = roles[ri];
+        tw.textContent = deleting ? word.slice(0, --ci) : word.slice(0, ++ci);
+        let delay = deleting ? 50 : 90;
+        if (!deleting && ci === word.length)  { delay = 1800; deleting = true; }
+        if (deleting  && ci === 0)            { deleting = false; ri = (ri + 1) % roles.length; delay = 300; }
+        setTimeout(type, delay);
+    }
+    type();
+
+    // ── Card 3D tilt ─────────────────────────────────────────────────────────────
+    document.querySelectorAll('.project-card, .service-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left - r.width  / 2;
+            const y = e.clientY - r.top  - r.height / 2;
+            const rX = (-y / r.height * 8).toFixed(2);
+            const rY = ( x / r.width  * 8).toFixed(2);
+            card.style.transform = `perspective(1000px) rotateX(${rX}deg) rotateY(${rY}deg) scale(1.02)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+        });
+    });
+</script>
+</body>
+
+</html>
