@@ -10,7 +10,7 @@ export default function Services() {
     <section
       id="services"
       className="section-padding relative"
-      style={{ background: "#090918" }}
+      style={{ background: "rgba(9,9,24,0.55)" }}
     >
       <div
         className="pointer-events-none absolute inset-0"

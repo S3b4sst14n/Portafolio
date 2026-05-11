@@ -41,7 +41,7 @@ export default function Stats() {
       className="relative border-y border-brand-primary/15 py-12"
       style={{
         background:
-          "linear-gradient(90deg, rgba(9,9,24,1) 0%, rgba(15,9,32,1) 50%, rgba(9,9,24,1) 100%)",
+          "linear-gradient(90deg, rgba(9,9,24,.55) 0%, rgba(15,9,32,.7) 50%, rgba(9,9,24,.55) 100%)",
       }}
     >
       <div

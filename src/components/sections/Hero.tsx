@@ -131,14 +131,14 @@ export default function Hero() {
         >
           {/* Conic spinning ring background */}
           <div
-            className="absolute h-[420px] w-[420px] animate-spin-slow rounded-full opacity-35 blur-2xl"
+            className="absolute h-[460px] w-[460px] animate-spin-slow rounded-full opacity-40 blur-2xl"
             style={{
               background:
                 "conic-gradient(from 0deg, #7c3aed, #06b6d4, #f472b6, #7c3aed)",
             }}
           />
 
-          <div className="relative z-10 w-[360px] rounded-3xl border border-white/[0.09] bg-white/[0.04] p-11 text-center shadow-[0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.08)] backdrop-blur-2xl">
+          <div className="relative z-10 w-[380px] rounded-3xl border border-white/[0.09] bg-white/[0.04] p-10 text-center shadow-[0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.08)] backdrop-blur-2xl">
             {/* Inner glow */}
             <div
               className="pointer-events-none absolute inset-0 rounded-3xl"
@@ -149,7 +149,7 @@ export default function Hero() {
             />
 
             {/* Avatar with personal photo */}
-            <div className="group/avatar relative mx-auto mb-6 h-40 w-40">
+            <div className="group/avatar relative mx-auto mb-7 h-48 w-48">
               {/* Spinning conic ring */}
               <div
                 className="absolute inset-0 animate-spin-slow rounded-full p-[2px]"
@@ -201,8 +201,8 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="font-display text-xl font-bold">Juan Sebastian</p>
-            <p className="mt-1.5 text-sm text-slate-400">
+            <p className="font-display text-2xl font-bold">Juan Sebastian</p>
+            <p className="mt-2 text-sm text-slate-400">
               Frontend &amp; Data Developer
             </p>
 
