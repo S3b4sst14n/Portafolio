@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Rocket, ChevronDown } from "lucide-react";
+import { Rocket, ChevronDown, Sparkles } from "lucide-react";
 import { SiReact, SiPython, SiAstro, SiTypescript, SiGithub } from "react-icons/si";
 import { FaLinkedinIn as SiLinkedin } from "react-icons/fa6";
 import { useTypewriter } from "../../hooks/useTypewriter";
@@ -57,7 +57,23 @@ export default function Hero() {
             variants={itemVariants}
             className="font-display text-[clamp(2.6rem,5.4vw,5rem)] font-bold leading-[1.05] tracking-tight"
           >
-            <span className="text-slate-200">Hola, soy</span>
+            <span className="inline-flex items-center gap-3 text-slate-200">
+              <motion.span
+                animate={{ rotate: [0, -12, 8, -12, 0], scale: [1, 1.1, 1] }}
+                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 3.5, delay: 0.6 }}
+                className="inline-flex origin-center translate-y-1.5"
+              >
+                <Sparkles className="h-4 w-4 text-brand-pink drop-shadow-[0_0_8px_rgba(244,114,182,0.6)] sm:h-5 sm:w-5" />
+              </motion.span>
+              Hola, soy
+              <motion.span
+                animate={{ rotate: [0, 12, -8, 12, 0] }}
+                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 3 }}
+                className="inline-flex origin-center"
+              >
+                <Sparkles className="h-6 w-6 text-brand-cyan drop-shadow-[0_0_10px_rgba(6,182,212,0.6)] sm:h-7 sm:w-7" />
+              </motion.span>
+            </span>
             <br />
             <span className="gradient-text-tri">Juan Sebastian</span>
           </motion.h1>
@@ -149,7 +165,7 @@ export default function Hero() {
             />
 
             {/* Avatar with personal photo */}
-            <div className="group/avatar relative mx-auto mb-7 h-48 w-48">
+            <div className="group/avatar relative mx-auto mb-6 h-44 w-44">
               {/* Spinning conic ring */}
               <div
                 className="absolute inset-0 animate-spin-slow rounded-full p-[2px]"
