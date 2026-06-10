@@ -1,21 +1,15 @@
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { SiGithub, SiInstagram } from "react-icons/si";
 import { FaLinkedinIn as SiLinkedin } from "react-icons/fa6";
 import { socials } from "../../data/portfolio";
+import Logo from "../ui/Logo";
 
 export default function Footer() {
   return (
     <footer className="relative border-t border-white/[0.06] bg-bg py-12">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-6 px-6">
         <a href="#hero" className="flex items-center gap-2.5 font-display font-bold">
-          <img
-            src="/img/Logo.png"
-            alt="JS"
-            width={32}
-            height={32}
-            className="rounded-md drop-shadow-[0_0_8px_rgba(124,58,237,.6)]"
-          />
+          <Logo size={32} className="drop-shadow-[0_0_8px_rgba(124,58,237,.6)]" />
           <span className="text-sm">Juan Sebastian</span>
         </a>
 
@@ -29,7 +23,7 @@ export default function Footer() {
           {[
             { href: socials.linkedin, icon: SiLinkedin, label: "LinkedIn" },
             { href: socials.github, icon: SiGithub, label: "GitHub" },
-            { href: `mailto:${socials.email}`, icon: Mail, label: "Email" },
+            { href: socials.instagram, icon: SiInstagram, label: "Instagram" },
           ].map((s, i) => {
             const Icon = s.icon;
             return (

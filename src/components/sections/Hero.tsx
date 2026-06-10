@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { Rocket, ChevronDown, Sparkles } from "lucide-react";
-import { SiReact, SiPython, SiAstro, SiTypescript, SiGithub } from "react-icons/si";
+import { Rocket, ChevronDown } from "lucide-react";
+import { SiReact, SiPython, SiAstro, SiTypescript, SiGithub, SiInstagram } from "react-icons/si";
 import { FaLinkedinIn as SiLinkedin } from "react-icons/fa6";
 import { useTypewriter } from "../../hooks/useTypewriter";
 import { socials } from "../../data/portfolio";
@@ -58,21 +58,7 @@ export default function Hero() {
             className="font-display text-[clamp(2.6rem,5.4vw,5rem)] font-bold leading-[1.05] tracking-tight"
           >
             <span className="inline-flex items-center gap-3 text-slate-200">
-              <motion.span
-                animate={{ rotate: [0, -12, 8, -12, 0], scale: [1, 1.1, 1] }}
-                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 3.5, delay: 0.6 }}
-                className="inline-flex origin-center translate-y-1.5"
-              >
-                <Sparkles className="h-4 w-4 text-brand-pink drop-shadow-[0_0_8px_rgba(244,114,182,0.6)] sm:h-5 sm:w-5" />
-              </motion.span>
               Hola, soy
-              <motion.span
-                animate={{ rotate: [0, 12, -8, 12, 0] }}
-                transition={{ duration: 1.8, repeat: Infinity, repeatDelay: 3 }}
-                className="inline-flex origin-center"
-              >
-                <Sparkles className="h-6 w-6 text-brand-cyan drop-shadow-[0_0_10px_rgba(6,182,212,0.6)] sm:h-7 sm:w-7" />
-              </motion.span>
             </span>
             <br />
             <span className="gradient-text-tri">Juan Sebastian</span>
@@ -114,11 +100,7 @@ export default function Hero() {
             {[
               { href: socials.github, icon: SiGithub, label: "GitHub" },
               { href: socials.linkedin, icon: SiLinkedin, label: "LinkedIn" },
-              {
-                href: `mailto:${socials.email}`,
-                icon: () => <span className="text-[15px]">@</span>,
-                label: "Email",
-              },
+              { href: socials.instagram, icon: SiInstagram, label: "Instagram" },
             ].map((s, i) => {
               const Icon = s.icon as React.ComponentType<{ size?: number }>;
               return (
@@ -154,15 +136,33 @@ export default function Hero() {
             }}
           />
 
-          <div className="relative z-10 w-[380px] rounded-3xl border border-white/[0.09] bg-white/[0.04] p-10 text-center shadow-[0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.08)] backdrop-blur-2xl">
-            {/* Inner glow */}
+          <div className="group relative z-10 w-[380px] overflow-hidden rounded-[28px] border border-white/[0.08] bg-[rgba(12,12,30,.55)] p-10 text-center shadow-[0_40px_90px_-20px_rgba(124,58,237,.35),0_32px_80px_rgba(0,0,0,.5),inset_0_1px_0_rgba(255,255,255,.1)] backdrop-blur-2xl">
+            {/* Top violet glow */}
             <div
-              className="pointer-events-none absolute inset-0 rounded-3xl"
+              className="pointer-events-none absolute inset-x-0 top-0 h-44"
               style={{
                 background:
-                  "radial-gradient(circle at 50% 0%, rgba(124,58,237,.18) 0%, transparent 70%)",
+                  "radial-gradient(ellipse 70% 100% at 50% 0%, rgba(124,58,237,.3) 0%, transparent 72%)",
               }}
             />
+            {/* Cyan corner glow */}
+            <div
+              className="pointer-events-none absolute -bottom-12 -right-12 h-44 w-44 rounded-full blur-3xl"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(6,182,212,.32) 0%, transparent 70%)",
+              }}
+            />
+            {/* Pink corner glow */}
+            <div
+              className="pointer-events-none absolute -bottom-12 -left-12 h-40 w-40 rounded-full blur-3xl"
+              style={{
+                background:
+                  "radial-gradient(circle, rgba(244,114,182,.2) 0%, transparent 70%)",
+              }}
+            />
+            {/* Top hairline accent */}
+            <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
 
             {/* Avatar with personal photo */}
             <div className="group/avatar relative mx-auto mb-6 h-44 w-44">
@@ -217,20 +217,28 @@ export default function Hero() {
               </div>
             </div>
 
-            <p className="font-display text-2xl font-bold">Juan Sebastian</p>
-            <p className="mt-2 text-sm text-slate-400">
-              Frontend &amp; Data Developer
+            <p className="relative font-display text-2xl font-bold tracking-tight">
+              Juan Sebastian
             </p>
+            <div className="relative mt-3 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-brand-cyan shadow-[0_0_8px_#06b6d4]" />
+              <span className="text-xs font-semibold text-slate-300">
+                Frontend &amp; Data Developer
+              </span>
+            </div>
 
-            <div className="my-6 h-px bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+            <div className="relative my-6 h-px bg-gradient-to-r from-transparent via-brand-primary/40 to-transparent" />
 
-            <div className="flex items-center justify-between gap-2">
+            <div className="relative flex items-center justify-between">
               {[
-                { v: "4+", l: "Proyectos" },
+                { v: "7+", l: "Proyectos" },
                 { v: "14+", l: "Tech" },
                 { v: "1+", l: "Año exp." },
-              ].map((s) => (
-                <div key={s.l} className="flex flex-1 flex-col items-center">
+              ].map((s, i) => (
+                <div
+                  key={s.l}
+                  className={`flex flex-1 flex-col items-center ${i > 0 ? "border-l border-white/10" : ""}`}
+                >
                   <span className="gradient-text font-display text-2xl font-bold">
                     {s.v}
                   </span>

@@ -86,32 +86,64 @@ export const projects: Project[] = [
     image: "/img/TalentoParaTi.png",
     tags: ["Astro", "React", "SCSS", "Tailwind"],
     category: "web",
-    featured: true,
     live: "https://www.talentoparati.com/en",
     workBadge: "Trabajo profesional",
   },
   {
-    id: "novatech",
-    title: "Novatech",
+    id: "eventos",
+    title: "Eventos TPT",
     description:
-      "Tienda online de productos tecnológicos con diseño moderno, interfaz intuitiva y totalmente responsive, construida desde cero.",
-    image: "/img/Novatech.png",
-    tags: ["HTML", "CSS", "JavaScript"],
+      "Plataforma de gestión de eventos desarrollada para Talento Para Ti, la empresa donde laboro actualmente. Permite organizar, administrar y dar seguimiento a eventos corporativos.",
+    image: "/img/EventosTPT.png",
+    tags: ["React", "TypeScript", "Tailwind"],
     category: "web",
-    live: "https://nova-tech-pi.vercel.app",
-    code: "https://github.com/S3b4sst14n/NovaTech",
+    live: "https://2605-landing-page-eventos.vercel.app/",
+    workBadge: "Trabajo profesional",
   },
   {
-    id: "blog-mha",
-    title: "Blog My Hero Academia",
+    id: "electivos",
+    title: "Gestión de Electivas",
     description:
-      "Blog con análisis de episodios, personajes y teorías de la serie. Diseño atractivo con navegación fluida construido con Bootstrap.",
-    image: "/img/Blog.png",
-    tags: ["HTML", "CSS", "Bootstrap"],
+      "Sistema de gestión de electivas para la universidad, presentado en una feria universitaria. Facilita la inscripción y administración de asignaturas electivas para los estudiantes.",
+    image: "/img/ElectivosCul.png",
+    tags: ["React", "TypeScript", "Tailwind"],
     category: "web",
-    live: "https://myheroacademyproyect.vercel.app",
-    code: "https://github.com/S3b4sst14n/Mi-primera-pagina2",
+    live: "https://electivos-cul.vercel.app/login",
   },
+  {
+    id: "constanfit",
+    title: "Constanfit",
+    description:
+      "SaaS para gimnasios que centraliza la gestión de membresías, rutinas y seguimiento de clientes. Proyecto en desarrollo.",
+    image: "/img/Constanfit.png",
+    tags: ["React", "TypeScript", "Tailwind"],
+    category: "web",
+    featured: true,
+    live: "https://constanfit.vercel.app",
+  },
+  // Proyectos ocultos temporalmente — descomenta para volver a mostrarlos en la sección.
+  // {
+  //   id: "novatech",
+  //   title: "Novatech",
+  //   description:
+  //     "Tienda online de productos tecnológicos con diseño moderno, interfaz intuitiva y totalmente responsive, construida desde cero.",
+  //   image: "/img/Novatech.png",
+  //   tags: ["HTML", "CSS", "JavaScript"],
+  //   category: "web",
+  //   live: "https://nova-tech-pi.vercel.app",
+  //   code: "https://github.com/S3b4sst14n/NovaTech",
+  // },
+  // {
+  //   id: "blog-mha",
+  //   title: "Blog My Hero Academia",
+  //   description:
+  //     "Blog con análisis de episodios, personajes y teorías de la serie. Diseño atractivo con navegación fluida construido con Bootstrap.",
+  //   image: "/img/Blog.png",
+  //   tags: ["HTML", "CSS", "Bootstrap"],
+  //   category: "web",
+  //   live: "https://myheroacademyproyect.vercel.app",
+  //   code: "https://github.com/S3b4sst14n/Mi-primera-pagina2",
+  // },
   {
     id: "accidentes",
     title: "Accidentes Lab",
@@ -162,7 +194,7 @@ export type StatItem = {
 };
 
 export const stats: StatItem[] = [
-  { value: 4, suffix: "+", label: "Proyectos" },
+  { value: 7, suffix: "+", label: "Proyectos" },
   { value: 5, suffix: ".°", label: "Semestre universitario" },
   { value: 14, suffix: "+", label: "Tecnologías" },
   { value: 1, suffix: "+", label: "Año de experiencia" },
@@ -180,5 +212,6 @@ export const navLinks: NavLink[] = [
 export const socials = {
   github: "https://github.com/S3b4sst14n",
   linkedin: "https://www.linkedin.com/in/juan-17a528293/",
+  instagram: "https://www.instagram.com/iam_juann_/",
   email: "sanjuanelojuan06@gmail.com",
 };

@@ -1,7 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, Check, AlertCircle, Loader2 } from "lucide-react";
-import { SiGithub } from "react-icons/si";
+import { Send, Check, AlertCircle, Loader2 } from "lucide-react";
+import { SiGithub, SiInstagram } from "react-icons/si";
 import { FaLinkedinIn as SiLinkedin } from "react-icons/fa6";
 import { socials } from "../../data/portfolio";
 
@@ -95,10 +95,10 @@ export default function Contact() {
             <div className="mt-9 flex flex-col gap-5">
               {[
                 {
-                  icon: Mail,
-                  label: "Email",
-                  value: socials.email,
-                  href: `mailto:${socials.email}`,
+                  icon: SiInstagram,
+                  label: "Instagram",
+                  value: "@iam_juann_",
+                  href: socials.instagram,
                 },
                 {
                   icon: SiGithub,

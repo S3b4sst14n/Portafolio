@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { ExternalLink, Star, Filter } from "lucide-react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { ExternalLink, Star, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects, type Project } from "../../data/portfolio";
 
@@ -15,12 +15,41 @@ type FilterId = (typeof filters)[number]["id"];
 export default function Projects() {
   const [filter, setFilter] = useState<FilterId>("all");
 
-  const featured = useMemo(() => projects.find((p) => p.featured), []);
+  const featured = useMemo(() => projects.filter((p) => p.featured), []);
   const grid = useMemo(
     () =>
       projects.filter((p) => !p.featured && (filter === "all" || p.category === filter)),
     [filter],
   );
+
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  const stepWidth = () => {
+    const el = trackRef.current;
+    if (!el) return 0;
+    const first = el.firstElementChild as HTMLElement | null;
+    return first ? first.offsetWidth + 24 : el.clientWidth; // 24 = gap-6
+  };
+
+  const scrollByCards = (dir: number) =>
+    trackRef.current?.scrollBy({ left: dir * stepWidth(), behavior: "smooth" });
+
+  const scrollToCard = (i: number) =>
+    trackRef.current?.scrollTo({ left: i * stepWidth(), behavior: "smooth" });
+
+  const onScroll = () => {
+    const el = trackRef.current;
+    const w = stepWidth();
+    if (!el || !w) return;
+    setActive(Math.round(el.scrollLeft / w));
+  };
+
+  // Reinicia el carrusel al cambiar de filtro
+  useEffect(() => {
+    setActive(0);
+    trackRef.current?.scrollTo({ left: 0 });
+  }, [filter]);
 
   return (
     <section id="projects" className="section-padding relative">
@@ -42,7 +71,9 @@ export default function Projects() {
         </motion.div>
 
         {/* Featured */}
-        {featured && <FeaturedProject project={featured} />}
+        {featured.map((p) => (
+          <FeaturedProject key={p.id} project={p} />
+        ))}
 
         {/* Filter pills */}
         <motion.div
@@ -83,16 +114,66 @@ export default function Projects() {
           })}
         </motion.div>
 
-        {/* Grid */}
-        <motion.div layout className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {grid.map((p, i) => (
-              <ProjectCard key={p.id} project={p} index={i} />
-            ))}
-          </AnimatePresence>
-        </motion.div>
+        {/* Carrusel */}
+        {grid.length > 0 ? (
+          <div className="relative">
+            <div
+              ref={trackRef}
+              onScroll={onScroll}
+              className="flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
+              {grid.map((p, i) => (
+                <div
+                  key={p.id}
+                  className="w-[85%] flex-shrink-0 snap-start sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                >
+                  <ProjectCard project={p} index={i} />
+                </div>
+              ))}
+            </div>
 
-        {grid.length === 0 && (
+            {/* Controles: flechas a los lados de los indicadores */}
+            {grid.length > 1 && (
+              <div className="mt-7 flex items-center justify-center gap-4">
+                <button
+                  type="button"
+                  onClick={() => scrollByCards(-1)}
+                  aria-label="Proyecto anterior"
+                  disabled={active === 0}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-bg/80 text-slate-200 backdrop-blur transition-all hover:border-brand-primary/50 hover:bg-brand-primary/20 disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  <ChevronLeft size={18} />
+                </button>
+
+                <div className="flex items-center gap-2">
+                  {grid.map((_, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      aria-label={`Ir al proyecto ${i + 1}`}
+                      onClick={() => scrollToCard(i)}
+                      className={`h-2 rounded-full transition-all ${
+                        active === i
+                          ? "w-6 bg-gradient-to-r from-brand-primary to-brand-cyan"
+                          : "w-2 bg-white/20 hover:bg-white/40"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => scrollByCards(1)}
+                  aria-label="Proyecto siguiente"
+                  disabled={active >= grid.length - 1}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-bg/80 text-slate-200 backdrop-blur transition-all hover:border-brand-primary/50 hover:bg-brand-primary/20 disabled:cursor-not-allowed disabled:opacity-30"
+                >
+                  <ChevronRight size={18} />
+                </button>
+              </div>
+            )}
+          </div>
+        ) : (
           <p className="mt-12 text-center text-sm text-slate-500">
             No hay proyectos en esta categoría todavía. Vuelve pronto :)
           </p>
@@ -188,12 +269,10 @@ function FeaturedProject({ project }: { project: Project }) {
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
     <motion.div
-      layout
       initial={{ opacity: 0, y: 24, scale: 0.96 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.96 }}
       transition={{ duration: 0.45, delay: index * 0.06 }}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_28px_72px_rgba(0,0,0,.6),0_0_0_1px_rgba(124,58,237,.4)]"
+      className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.03] transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_28px_72px_rgba(0,0,0,.6),0_0_0_1px_rgba(124,58,237,.4)]"
     >
       {/* Gradient hover border */}
       <div

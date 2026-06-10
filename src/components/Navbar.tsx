@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { navLinks } from "../data/portfolio";
+import Logo from "./ui/Logo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -51,14 +52,12 @@ export default function Navbar() {
           href="#hero"
           className="flex items-center gap-2.5 font-display text-base font-bold"
         >
-          <motion.img
+          <motion.span
             whileHover={{ rotate: 8, scale: 1.05 }}
-            src="/img/Logo.png"
-            alt="JS"
-            width={36}
-            height={36}
-            className="rounded-lg shadow-[0_0_12px_rgba(124,58,237,.55)]"
-          />
+            className="inline-flex drop-shadow-[0_0_12px_rgba(124,58,237,.55)]"
+          >
+            <Logo size={36} />
+          </motion.span>
           <span className="hidden sm:inline">
             Juan<span className="gradient-text">.</span>
           </span>
