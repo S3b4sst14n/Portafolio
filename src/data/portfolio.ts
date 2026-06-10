@@ -153,6 +153,7 @@ export const projects: Project[] = [
     tags: ["Python", "Pandas", "Matplotlib"],
     category: "data",
     code: "https://github.com/S3b4sst14n",
+    live: "https://accidentes-lab.vercel.app",
   },
 ];
 
